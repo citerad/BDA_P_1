@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="edu.ub.bda.ubticket.beans.Entrada" table="ENTRADA">
+        <id name="id" column="ID">
+            <generator class="identity" />
+        </id>
+        <property name="fila" column="FILA" />  
+        <property name="asiento" column="ASIENTO" />      
+        <many-to-one name="sesion" class="edu.ub.bda.ubticket.beans.Sesion" fetch="select">
+            <column name="SESION_ID" /> <!-- CAMP FK --> 
+        </many-to-one>
+        <many-to-one name="usuario" class="edu.ub.bda.ubticket.beans.Usuario" fetch="select">
+            <column name="USUARIO_ID" /> <!-- CAMP FK --> 
+        </many-to-one>
+    </class>
+</hibernate-mapping>

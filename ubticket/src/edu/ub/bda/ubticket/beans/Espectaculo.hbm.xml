@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="edu.ub.bda.ubticket.beans.Espectaculo" table="ESPECTACULO">
+        <id name="id" column="ID">
+            <generator class="identity" />
+        </id>
+        <property name="titulo" column="TITULO" />
+        <property name="descripcion" column="DESCRIPCION" />
+        <many-to-one name="categoria" class="edu.ub.bda.ubticket.beans.Categoria" fetch="select">
+            <column name="CATEGORIA_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
